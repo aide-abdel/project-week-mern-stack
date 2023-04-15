@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 function App() {
   return (
     <div>
-      <Home />
+      <Home xs={{ backgroundColor: "#000" }} />
     </div>
   );
 }
