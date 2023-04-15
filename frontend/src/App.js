@@ -1,10 +1,15 @@
 import * as React from "react";
 import Home from "./pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Exercises from "./pages/Exercises";
 function App() {
   return (
-    <div>
-      <Home xs={{ backgroundColor: "#000" }} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home xs={{ backgroundColor: "#000" }} />} />
+        <Route path="/exercises" element={<Exercises />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

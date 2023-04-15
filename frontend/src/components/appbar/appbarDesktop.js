@@ -11,22 +11,29 @@ import SearchIcon from "@mui/icons-material/Search";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
+import { Link } from "react-router-dom";
 export default function AppbarDesktop({ matches }) {
   return (
     <MyAppBar>
-      <MyLogoBox>
-        <FitnessCenterIcon
-          sx={{ fontSize: "3em", marginLeft: ".5em", marginRight: ".2em" }}
-        />
-        <Button variant="text" sx={{ color: "#fff", fontSize: "1.5em" }}>
-          FITNESS PLANNER
-        </Button>
-      </MyLogoBox>
+      <Link to="/">
+        <MyLogoBox>
+          <FitnessCenterIcon
+            sx={{ fontSize: "3em", marginLeft: ".5em", marginRight: ".2em" }}
+          />
+          <Button variant="text" sx={{ color: "#fff", fontSize: "1.5em" }}>
+            FITNESS PLANNER
+          </Button>
+        </MyLogoBox>
+      </Link>
       <MyMenuBox>
         <PopupState variant="popover" popupId="calculator-popup">
           {(PopupState) => (
             <>
-              <MyMenuButton variant="text" {...bindTrigger(PopupState)}>
+              <MyMenuButton
+                sx={{ fontWeight: "bold" }}
+                variant="text"
+                {...bindTrigger(PopupState)}
+              >
                 Calculator
               </MyMenuButton>
               <Menu {...bindMenu(PopupState)}>
@@ -41,9 +48,15 @@ export default function AppbarDesktop({ matches }) {
             </>
           )}
         </PopupState>
-        <MyMenuButton variant="text">Exercises</MyMenuButton>
-        <MyMenuButton variant="text">Workouts</MyMenuButton>
-        <MyMenuButton variant="text">Workout Plans</MyMenuButton>
+        <MyMenuButton variant="text" sx={{ fontWeight: "bold" }}>
+          <Link to="/exercises">Exercises</Link>
+        </MyMenuButton>
+        <MyMenuButton variant="text" sx={{ fontWeight: "bold" }}>
+          Workouts
+        </MyMenuButton>
+        <MyMenuButton variant="text" sx={{ fontWeight: "bold" }}>
+          MEALS
+        </MyMenuButton>
       </MyMenuBox>
       <MyRightMenu>
         <TextField
@@ -58,7 +71,9 @@ export default function AppbarDesktop({ matches }) {
             ),
           }}
         />
-        <MyMenuButton variant="text">Login / Register</MyMenuButton>
+        <MyMenuButton variant="text" sx={{ fontWeight: "bold" }}>
+          Login / Register
+        </MyMenuButton>
       </MyRightMenu>
     </MyAppBar>
   );
