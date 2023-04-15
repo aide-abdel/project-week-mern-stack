@@ -72,7 +72,7 @@ export default function AppbarDesktop({ matches }) {
           }}
         />
         <MyMenuButton variant="text" sx={{ fontWeight: "bold" }}>
-          Login / Register
+          <Link to="/login">Login / Register</Link>
         </MyMenuButton>
       </MyRightMenu>
     </MyAppBar>
