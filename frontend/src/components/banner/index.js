@@ -6,15 +6,27 @@ function MyCarousel() {
   var items = [
     {
       name: "Choose Excercises",
-      description: "Probably the most random thing you have ever seen!",
+      description:
+        "Fitness is not about being better than someone else. It's about being better than you used to be.",
     },
     {
       name: "Plan meals",
-      description: "Hello World!",
+      description:
+        "You don't have to be great to start, but you have to start to be great.",
     },
     {
       name: "Plan workouts",
-      description: "Hello World!",
+      description: "The only way to do great work is to love what you do",
+    },
+    {
+      name: "Plan workouts",
+      description:
+        "Fitness is not just about the body. It's also about the mind.",
+    },
+    {
+      name: "Plan workouts",
+      description:
+        "Exercise is a celebration of what your body can do. Not a punishment for what you ate",
     },
   ];
 
@@ -37,8 +49,8 @@ function Item(props) {
         textAlign: "center",
       }}
     >
-      <h2>{props.item.name}</h2>
-      <p>{props.item.description}</p>
+      {/* <h2>{props.item.name}</h2> */}
+      <h1 style={{ padding: "8%" }}>{props.item.description}</h1>
     </Paper>
   );
 }

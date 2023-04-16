@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { TextField, FormControl, Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { TextField, Button } from "@mui/material";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -27,9 +26,9 @@ const Login = () => {
   };
 
   return (
-    <React.Fragment>
+    <div style={{ border: "solid black 1px", padding: "5%" }}>
       <form autoComplete="off" onSubmit={handleSubmit}>
-        <h2>Login Form</h2>
+        <h2>Login</h2>
         <TextField
           label="Email"
           onChange={(e) => setEmail(e.target.value)}
@@ -54,11 +53,16 @@ const Login = () => {
           fullWidth
           sx={{ mb: 3 }}
         />
-        <Button variant="outlined" color="secondary" type="submit">
+        <Button
+          variant="outlined"
+          type="submit"
+          color="primary"
+          sx={{ color: "black" }}
+        >
           Login
         </Button>
       </form>
-    </React.Fragment>
+    </div>
   );
 };
 
