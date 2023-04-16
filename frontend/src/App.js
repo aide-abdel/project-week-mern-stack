@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Exercises from "./pages/Exercises";
 import LoginRegister from "./pages/LoginRegister";
 import Meals from "./pages/Meals";
+import Bmi from "./components/calculators/Bmi";
 function App() {
   return (
     <BrowserRouter>
@@ -12,6 +13,7 @@ function App() {
         <Route path="/exercises" element={<Exercises />} />
         <Route path="/login" element={<LoginRegister />} />
         <Route path="/meals" element={<Meals />} />
+        <Route path="/calculators/bmi" element={<Bmi />} />
       </Routes>
     </BrowserRouter>
   );

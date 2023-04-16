@@ -40,7 +40,11 @@ export default function AppbarDesktop({ matches }) {
                 Calculator
               </MyMenuButton>
               <Menu {...bindMenu(PopupState)}>
-                <MenuItem onClick={PopupState.close}>Body Mass Index</MenuItem>
+                <Link to="/calculators/bmi">
+                  <MenuItem onClick={PopupState.close}>
+                    Body Mass Index
+                  </MenuItem>
+                </Link>
                 <MenuItem onClick={PopupState.close}>Body Fat Index</MenuItem>
                 <MenuItem onClick={PopupState.close}>Calories Burned</MenuItem>
                 <MenuItem onClick={PopupState.close}>
