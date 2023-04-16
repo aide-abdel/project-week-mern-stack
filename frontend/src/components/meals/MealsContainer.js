@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import MealCard from "./MealCard";
+import { Container, Grid } from "@mui/material";
 
 function MealsContainer() {
   const apiKey = "f9212116f48b5e1197dcdd12626ef75f93f3381e";
@@ -42,7 +44,11 @@ function MealsContainer() {
                     image: matchingImageData.image,
                   };
                 } else {
-                  return ingredient;
+                  return {
+                    ...ingredient,
+                    image:
+                      "https://i.pinimg.com/originals/07/15/1f/07151fee466605af9db6f9ad6e60f4b8.jpg",
+                  };
                 }
               }
             );
@@ -52,19 +58,18 @@ function MealsContainer() {
   }, []);
 
   return (
-    <div>
-      <h1>Ingredients</h1>
-      <ul>
+    <Container>
+      <Grid container>
         {ingredients.map((ingredient) => (
-          <li key={ingredient.id}>
-            <h2>{ingredient.name}</h2>
-            {ingredient.image && (
-              <img src={ingredient.image} alt={ingredient.name} />
-            )}
-          </li>
+          <Grid item xs={4}>
+            <MealCard
+              ingredientName={ingredient.name}
+              ingredientImage={ingredient.image}
+            />
+          </Grid>
         ))}
-      </ul>
-    </div>
+      </Grid>
+    </Container>
   );
 }
 

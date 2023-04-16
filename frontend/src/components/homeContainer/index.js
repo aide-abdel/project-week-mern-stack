@@ -34,9 +34,9 @@ function HomeContainer() {
         <Grid item xs={6}>
           <Card>
             <CardMedia
-              sx={{ height: 600, width: 1000 }}
+              sx={{ height: 600, width: "100%" }}
               component="img"
-              image="https://cdn.shopify.com/s/files/1/0580/2865/4785/files/ro-t8-handles-banner_1920x820_crop_right.jpg?v=1626980099"
+              image="https://www.muscleandfitness.com/wp-content/uploads/2016/09/Bodybuilder-Working-Out-His-Upper-Body-With-Cable-Crossover-Exercise.jpg?quality=86&strip=all"
             />
           </Card>
         </Grid>
@@ -44,7 +44,7 @@ function HomeContainer() {
         <Grid item xs={6}>
           <Card>
             <CardMedia
-              sx={{ height: 600, width: 1000 }}
+              sx={{ height: 600, width: "100%" }}
               component="img"
               image="https://static01.nyt.com/images/2017/04/09/well/9minute-workout-promo/9minute-workout-promo-jumbo.png"
             />
@@ -91,7 +91,7 @@ function HomeContainer() {
         <Grid item xs={6}>
           <Card>
             <CardMedia
-              sx={{ height: 600, width: 1000 }}
+              sx={{ height: 600, width: "100%" }}
               component="img"
               image="https://supersafeway.com/wp-content/uploads/2019/12/Meal_planning_101.png"
             />

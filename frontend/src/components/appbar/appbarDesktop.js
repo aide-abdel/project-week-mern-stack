@@ -15,12 +15,15 @@ import { Link } from "react-router-dom";
 export default function AppbarDesktop({ matches }) {
   return (
     <MyAppBar>
-      <Link to="/">
+      <Link to="/" style={{ textDecoration: "none", color: "white" }}>
         <MyLogoBox>
           <FitnessCenterIcon
             sx={{ fontSize: "3em", marginLeft: ".5em", marginRight: ".2em" }}
           />
-          <Button variant="text" sx={{ color: "#fff", fontSize: "1.5em" }}>
+          <Button
+            variant="text"
+            sx={{ color: "#fff", fontSize: "1.5em", marginRight: "5em" }}
+          >
             FITNESS PLANNER
           </Button>
         </MyLogoBox>
@@ -49,13 +52,20 @@ export default function AppbarDesktop({ matches }) {
           )}
         </PopupState>
         <MyMenuButton variant="text" sx={{ fontWeight: "bold" }}>
-          <Link to="/exercises">Exercises</Link>
+          <Link
+            to="/exercises"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Exercises
+          </Link>
         </MyMenuButton>
         <MyMenuButton variant="text" sx={{ fontWeight: "bold" }}>
           Workouts
         </MyMenuButton>
         <MyMenuButton variant="text" sx={{ fontWeight: "bold" }}>
-          MEALS
+          <Link to="/meals" style={{ textDecoration: "none", color: "white" }}>
+            MEALS
+          </Link>
         </MyMenuButton>
       </MyMenuBox>
       <MyRightMenu>
@@ -72,7 +82,9 @@ export default function AppbarDesktop({ matches }) {
           }}
         />
         <MyMenuButton variant="text" sx={{ fontWeight: "bold" }}>
-          <Link to="/login">Login / Register</Link>
+          <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
+            Login / Register
+          </Link>
         </MyMenuButton>
       </MyRightMenu>
     </MyAppBar>

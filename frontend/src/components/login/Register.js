@@ -26,7 +26,9 @@ const Register = () => {
   };
 
   return (
-    <div style={{ border: "solid black 1px", padding: "5%" }}>
+    <div
+      style={{ border: "solid black 1px", borderRadius: "2%", padding: "5%" }}
+    >
       <form autoComplete="off" onSubmit={handleSubmit}>
         <h2>Register</h2>
         <TextField
