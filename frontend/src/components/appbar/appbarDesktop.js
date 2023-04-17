@@ -45,7 +45,9 @@ export default function AppbarDesktop({ matches }) {
                     Body Mass Index
                   </MenuItem>
                 </Link>
-                <MenuItem onClick={PopupState.close}>Body Fat Index</MenuItem>
+                <Link to="/calculators/bfi">
+                  <MenuItem onClick={PopupState.close}>Body Fat Index</MenuItem>
+                </Link>
                 <MenuItem onClick={PopupState.close}>Calories Burned</MenuItem>
                 <MenuItem onClick={PopupState.close}>
                   Daily Calorie Calculator

@@ -5,6 +5,7 @@ import Exercises from "./pages/Exercises";
 import LoginRegister from "./pages/LoginRegister";
 import Meals from "./pages/Meals";
 import Bmi from "./components/calculators/Bmi";
+import Bfi from "./components/calculators/Bfi";
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<LoginRegister />} />
         <Route path="/meals" element={<Meals />} />
         <Route path="/calculators/bmi" element={<Bmi />} />
+        <Route path="/calculators/bfi" element={<Bfi />} />
       </Routes>
     </BrowserRouter>
   );
