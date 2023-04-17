@@ -48,11 +48,19 @@ export default function AppbarDesktop({ matches }) {
                 <Link to="/calculators/bfi">
                   <MenuItem onClick={PopupState.close}>Body Fat Index</MenuItem>
                 </Link>
-                <MenuItem onClick={PopupState.close}>Calories Burned</MenuItem>
-                <MenuItem onClick={PopupState.close}>
-                  Daily Calorie Calculator
-                </MenuItem>
-                <MenuItem onClick={PopupState.close}>One-rep Max</MenuItem>
+                <Link to="/calculators/cb">
+                  <MenuItem onClick={PopupState.close}>
+                    Calories Burned
+                  </MenuItem>
+                </Link>
+                <Link to="/calculators/dcc">
+                  <MenuItem onClick={PopupState.close}>
+                    Daily Calorie Calculator
+                  </MenuItem>
+                </Link>
+                <Link to="/calculators/orm">
+                  <MenuItem onClick={PopupState.close}>One-rep Max</MenuItem>
+                </Link>
               </Menu>
             </>
           )}

@@ -6,6 +6,9 @@ import LoginRegister from "./pages/LoginRegister";
 import Meals from "./pages/Meals";
 import Bmi from "./components/calculators/Bmi";
 import Bfi from "./components/calculators/Bfi";
+import Cb from "./components/calculators/Cb";
+import Dcc from "./components/calculators/Dcc";
+import Orm from "./components/calculators/Orm";
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +19,9 @@ function App() {
         <Route path="/meals" element={<Meals />} />
         <Route path="/calculators/bmi" element={<Bmi />} />
         <Route path="/calculators/bfi" element={<Bfi />} />
+        <Route path="calculators/cb" element={<Cb />} />
+        <Route path="calculators/dcc" element={<Dcc />} />
+        <Route path="calculators/orm" element={<Orm />} />
       </Routes>
     </BrowserRouter>
   );
