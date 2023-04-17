@@ -40,25 +40,40 @@ export default function AppbarDesktop({ matches }) {
                 Calculator
               </MyMenuButton>
               <Menu {...bindMenu(PopupState)}>
-                <Link to="/calculators/bmi">
+                <Link
+                  to="/calculators/bmi"
+                  style={{ color: "black", textDecoration: "none" }}
+                >
                   <MenuItem onClick={PopupState.close}>
                     Body Mass Index
                   </MenuItem>
                 </Link>
-                <Link to="/calculators/bfi">
+                <Link
+                  to="/calculators/bfi"
+                  style={{ color: "black", textDecoration: "none" }}
+                >
                   <MenuItem onClick={PopupState.close}>Body Fat Index</MenuItem>
                 </Link>
-                <Link to="/calculators/cb">
+                <Link
+                  to="/calculators/cb"
+                  style={{ color: "black", textDecoration: "none" }}
+                >
                   <MenuItem onClick={PopupState.close}>
                     Calories Burned
                   </MenuItem>
                 </Link>
-                <Link to="/calculators/dcc">
+                <Link
+                  to="/calculators/dcc"
+                  style={{ color: "black", textDecoration: "none" }}
+                >
                   <MenuItem onClick={PopupState.close}>
                     Daily Calorie Calculator
                   </MenuItem>
                 </Link>
-                <Link to="/calculators/orm">
+                <Link
+                  to="/calculators/orm"
+                  style={{ color: "black", textDecoration: "none" }}
+                >
                   <MenuItem onClick={PopupState.close}>One-rep Max</MenuItem>
                 </Link>
               </Menu>
@@ -74,7 +89,12 @@ export default function AppbarDesktop({ matches }) {
           </Link>
         </MyMenuButton>
         <MyMenuButton variant="text" sx={{ fontWeight: "bold" }}>
-          Workouts
+          <Link
+            to="/workouts"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Workouts
+          </Link>
         </MyMenuButton>
         <MyMenuButton variant="text" sx={{ fontWeight: "bold" }}>
           <Link to="/meals" style={{ textDecoration: "none", color: "white" }}>

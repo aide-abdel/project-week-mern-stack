@@ -1,33 +1,59 @@
 import React from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
-function Footer() {
-  return (
-    <Box
+import { AppBar, Toolbar, Typography, Grid, Link, Icon } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+const Footer = () => (
+  <>
+    <Grid
+      container
+      style={{ minHeight: "212px", marginTop: "5%" }}
+      spacing={6}
       sx={{
-        width: "100%",
-        height: "500",
-        backgroundColor: "#000",
-        color: "#fff",
-        paddingTop: "1rem",
-        paddingBottom: "1rem",
+        justifyContent: "center",
+        color: "white",
+        backgroundColor: "black",
       }}
     >
-      <Container maxWidth="lg">
-        <Grid container direction="column" alignItems="center">
-          <Grid item xs={12}>
-            <Typography color="white" variant="h5">
-              FITNESS PLANNER
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography color="white" variant="subtitle1">
-              {`${new Date().getFullYear()} | React | Material UI | React Router`}
-            </Typography>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
-  );
-}
+      <Grid item xs={3}>
+        <Typography variant="h5">FITNESS PLANNER</Typography>
+        <Typography variant="body2">
+          Online workout planner lets you create 5 free personalized workout
+          plans to help you reach your fitness goals.
+        </Typography>
+      </Grid>
+      <Grid item xs={3}>
+        <Typography variant="h5">ABOUT US</Typography>
+        <Typography variant="body2">
+          Online workout planner lets you create 5 free personalized workout
+          plans to help you reach your fitness goals.
+        </Typography>
+      </Grid>
+      <Grid item xs={3}>
+        <Typography variant="h5">
+          CONTACTS <hr />
+        </Typography>
+        <Link to="/">
+          <GitHubIcon />
+        </Link>
+        <Link to="/">
+          <LinkedInIcon />
+        </Link>
+        <Link to="/">
+          <InstagramIcon />
+        </Link>
+      </Grid>
+      <AppBar
+        position="static"
+        component="footer"
+        sx={{ backgroundColor: "black" }}
+      >
+        <Toolbar style={{ justifyContent: "center" }}>
+          <Typography variant="caption">&copy;2023</Typography>
+        </Toolbar>
+      </AppBar>
+    </Grid>
+  </>
+);
 
 export default Footer;

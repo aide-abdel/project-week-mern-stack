@@ -4,6 +4,7 @@ import Appbar from '../components/appbar'
 import Banner from '../components/login/Banner'
 import { Grid } from '@mui/material'
 import Register from '../components/login/Register'
+import Footer from '../components/footer'
 
 function LoginRegister() {
   return (
@@ -18,6 +19,7 @@ function LoginRegister() {
             <Register/>
             </Grid>
         </Grid>
+        <Footer/>
         
     </div>
   )
