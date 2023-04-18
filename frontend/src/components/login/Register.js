@@ -3,26 +3,37 @@ import { TextField, Button, MenuItem, InputAdornment } from "@mui/material";
 import axios from "axios";
 
 const Register = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-  const [user, setUser] = useState([
-    {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      gender: "",
-      age: "",
-      height: "",
-      weight: "",
-      goal: "",
-      activity: "",
-      neededCalories: "",
-      workouts: "",
-    },
-  ]);
+  const [user, setUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    gender: "",
+    age: "",
+    height: "",
+    weight: "",
+    goal: "",
+    activity: "",
+    neededCalories: "",
+    workouts: "",
+  });
+  const {
+    firstName,
+    lastName,
+    email,
+    password,
+    gender,
+    age,
+    height,
+    weight,
+    goal,
+    activity,
+    neededCalories,
+    workouts,
+  } = user;
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -44,8 +55,8 @@ const Register = () => {
         console.error(error);
       });
   };
-  const handlefNameChange = (event) => {};
-  const handlelNameChange = (event) => {};
+  const handleChange = (e) =>
+    setUser({ ...FormData, [e.target.name]: e.target.value });
   return (
     <div
       style={{ border: "solid black 1px", borderRadius: "2%", padding: "5%" }}
@@ -53,24 +64,27 @@ const Register = () => {
       <form autoComplete="off" onSubmit={handleSubmit}>
         <h2>Register</h2>
         <TextField
+          name="firstName"
           label="First Name"
           required
           variant="outlined"
           sx={{ mb: 3 }}
           fullWidth
-          onChange={(event) => handlefNameChange(event)}
+          onChange={(e) => handleChange(e)}
         />
         <TextField
+          name="lastName"
           label="Last Name"
           required
           variant="outlined"
           sx={{ mb: 3 }}
           fullWidth
-          onChange={(event) => handlelNameChange(event)}
+          onChange={(e) => handleChange(e)}
         />
         <TextField
+          name="email"
           label="Email"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => handleChange(e)}
           required
           variant="outlined"
           color="secondary"
@@ -81,8 +95,9 @@ const Register = () => {
           error={emailError}
         />
         <TextField
+          name="password"
           label="Password"
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => handleChange(e)}
           required
           variant="outlined"
           color="secondary"
@@ -94,7 +109,7 @@ const Register = () => {
         />
         <TextField
           label="Password (Again)"
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => handleChange(e)}
           required
           variant="outlined"
           color="secondary"
@@ -106,12 +121,14 @@ const Register = () => {
         />
         <hr />
         <TextField
+          name="gender"
           id="gender"
           select
           label="Gender"
           helperText="Please choose gender"
           fullWidth
           sx={{ mb: 3 }}
+          onChange={(e) => handleChange(e)}
         >
           <MenuItem key="male" value="Male">
             Male
@@ -124,14 +141,17 @@ const Register = () => {
           </MenuItem>
         </TextField>
         <TextField
+          name="age"
           label="Age"
           required
           type="number"
           variant="outlined"
           sx={{ mb: 3 }}
           fullWidth
+          onChange={(e) => handleChange(e)}
         />
         <TextField
+          name="height"
           label="Height"
           id="height"
           sx={{ mb: 3 }}
@@ -139,8 +159,10 @@ const Register = () => {
           InputProps={{
             startAdornment: <InputAdornment position="end">cm</InputAdornment>,
           }}
+          onChange={(e) => handleChange(e)}
         />
         <TextField
+          name="weight"
           label="Weight"
           id="weight"
           sx={{ mb: 3 }}
@@ -148,14 +170,17 @@ const Register = () => {
           InputProps={{
             startAdornment: <InputAdornment position="end">Kg</InputAdornment>,
           }}
+          onChange={(e) => handleChange(e)}
         />
         <TextField
+          name="goal"
           id="goal"
           select
           label="Goal"
           helperText="Goal"
           fullWidth
           sx={{ mb: 3 }}
+          onChange={(e) => handleChange(e)}
         >
           <MenuItem key="fat-loss" value="Fat Loss">
             Fat Loss
@@ -168,12 +193,14 @@ const Register = () => {
           </MenuItem>
         </TextField>
         <TextField
+          name="activity"
           id="activity"
           select
           label="Activity"
           helperText="Activity"
           fullWidth
           sx={{ mb: 3 }}
+          onChange={(e) => handleChange(e)}
         >
           <MenuItem key="lightly-active" value="Lightly Active">
             Lightly Active
@@ -189,6 +216,7 @@ const Register = () => {
           </MenuItem>
         </TextField>
         <TextField
+          name="neededCalories"
           label="Daily Calorie Need"
           required
           type="number"
@@ -198,6 +226,7 @@ const Register = () => {
           InputProps={{
             startAdornment: <InputAdornment position="end">cal</InputAdornment>,
           }}
+          onChange={(e) => handleChange(e)}
         />
         <Button
           variant="outlined"
