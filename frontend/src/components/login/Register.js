@@ -1,30 +1,51 @@
 import React, { useState } from "react";
 import { TextField, Button, MenuItem, InputAdornment } from "@mui/material";
+import axios from "axios";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-
+  const [user, setUser] = useState([
+    {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      gender: "",
+      age: "",
+      height: "",
+      weight: "",
+      goal: "",
+      activity: "",
+      neededCalories: "",
+      workouts: "",
+    },
+  ]);
   const handleSubmit = (event) => {
     event.preventDefault();
 
     setEmailError(false);
     setPasswordError(false);
 
-    if (email == "") {
+    if (email === "") {
       setEmailError(true);
     }
-    if (password == "") {
+    if (password === "") {
       setPasswordError(true);
     }
-
-    if (email && password) {
-      console.log(email, password);
-    }
+    axios
+      .post("/users", user)
+      .then((response) => {
+        console.log("register succefful");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
-
+  const handlefNameChange = (event) => {};
+  const handlelNameChange = (event) => {};
   return (
     <div
       style={{ border: "solid black 1px", borderRadius: "2%", padding: "5%" }}
@@ -37,6 +58,7 @@ const Register = () => {
           variant="outlined"
           sx={{ mb: 3 }}
           fullWidth
+          onChange={(event) => handlefNameChange(event)}
         />
         <TextField
           label="Last Name"
@@ -44,6 +66,7 @@ const Register = () => {
           variant="outlined"
           sx={{ mb: 3 }}
           fullWidth
+          onChange={(event) => handlelNameChange(event)}
         />
         <TextField
           label="Email"
