@@ -6,8 +6,8 @@ const Register = () => {
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [user, setUser] = useState({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
     gender: "",
@@ -47,24 +47,25 @@ const Register = () => {
       setPasswordError(true);
     }
     axios
-      .post("/users", user)
+      .post("http://localhost:3000/", user)
       .then((response) => {
-        console.log("register succefful");
+        console.log("register succefull");
       })
       .catch((error) => {
         console.error(error);
+        console.log(user);
       });
   };
   const handleChange = (e) =>
-    setUser({ ...FormData, [e.target.name]: e.target.value });
+    setUser({ ...user, [e.target.name]: e.target.value });
   return (
     <div
       style={{ border: "solid black 1px", borderRadius: "2%", padding: "5%" }}
     >
-      <form autoComplete="off" onSubmit={handleSubmit}>
+      <form autoComplete="on" onSubmit={handleSubmit}>
         <h2>Register</h2>
         <TextField
-          name="firstName"
+          name="firstname"
           label="First Name"
           required
           variant="outlined"
@@ -73,7 +74,7 @@ const Register = () => {
           onChange={(e) => handleChange(e)}
         />
         <TextField
-          name="lastName"
+          name="lastname"
           label="Last Name"
           required
           variant="outlined"
@@ -102,7 +103,6 @@ const Register = () => {
           variant="outlined"
           color="secondary"
           type="password"
-          value={password}
           error={passwordError}
           fullWidth
           sx={{ mb: 3 }}
@@ -114,7 +114,7 @@ const Register = () => {
           variant="outlined"
           color="secondary"
           type="password"
-          value={password}
+          name="password"
           error={passwordError}
           fullWidth
           sx={{ mb: 3 }}
