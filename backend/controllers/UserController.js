@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/User");
 
 async function createUser(req, res) {
+  console.log(req.body);
   const {
     firstname,
     lastname,
@@ -32,12 +33,15 @@ async function createUser(req, res) {
       neededCalories,
       workouts,
     });
-    req.session.user = user;
-    res.json({ sucess: true });
+    // req.session.user = user;
+    // res.json({ sucess: true });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
   }
 }
-
-module.exports = { createUser };
+async function getUsers() {
+  User.find().then((users) => console.log(users));
+  console.log("Hello from get users!");
+}
+module.exports = { createUser, getUsers };
