@@ -13,4 +13,15 @@ async function addMeal(req, res) {
   }
 }
 
-module.exports = { addMeal };
+async function getMealsByUserId(req, res) {
+  try {
+    const meals = await Meal.find({ user_id: req.params.userId }).populate(
+      "meal_id"
+    );
+    res.json(meals);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Server Error");
+  }
+}
+module.exports = { addMeal, getMealsByUserId };
