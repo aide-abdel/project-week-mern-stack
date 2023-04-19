@@ -33,8 +33,8 @@ This is a full stack fitness tracker application that allows users to track thei
 ## Screenshots
 
 ![Homepage](/screenshots/home.PNG)
-![Workout Details](/screenshots/workout-details.png)
-![Exercise Details](/screenshots/exercise-details.png)
+![Calculators](/screenshots/bmiCalculator.PNG)
+![Exercises](/screenshots/exercises.PNG)
 
 ## Credits
 
