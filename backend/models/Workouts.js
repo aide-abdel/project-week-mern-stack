@@ -1,12 +1,13 @@
 const { default: mongoose } = require("mongoose");
 
 const workoutSchema = new mongoose.Schema({
+  day: { type: String, required: true },
   excerciseOne: { type: String, required: true },
-  excerciseTwo: { type: String, required: true },
-  excerciseThree: { type: String, required: true },
-  excerciseFour: { type: String, required: true },
-  excerciseFive: { type: String, required: true },
-  excerciseSix: { type: String, required: true },
+  excerciseTwo: { type: String },
+  excerciseThree: { type: String },
+  excerciseFour: { type: String },
+  excerciseFive: { type: String },
+  excerciseSix: { type: String },
 });
 
 module.exports = Workout = mongoose.model("workout", workoutSchema);

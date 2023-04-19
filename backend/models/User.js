@@ -16,6 +16,10 @@ const userSchema = new mongoose.Schema({
     type: Array,
     ref: "Workouts",
   },
+  favoriteMeals: {
+    type: Array,
+    ref: "Meal",
+  },
 });
 
 module.exports = User = mongoose.model("user", userSchema);
