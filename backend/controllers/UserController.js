@@ -2,7 +2,6 @@ const bcrypt = require("bcrypt");
 const User = require("../models/User");
 
 async function createUser(req, res) {
-  console.log(req.body);
   const {
     firstname,
     lastname,
