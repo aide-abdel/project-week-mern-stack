@@ -17,7 +17,7 @@ const Register = () => {
     goal: "",
     activity: "",
     neededCalories: "",
-    workouts: "",
+    workouts: [],
   });
   const {
     firstName,

@@ -13,9 +13,8 @@ const userSchema = new mongoose.Schema({
   activity: { type: String, required: true },
   neededCalories: { type: Number, required: true },
   workouts: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Array,
     ref: "Workouts",
-    required: true,
   },
 });
 
