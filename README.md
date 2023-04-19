@@ -32,7 +32,7 @@ This is a full stack fitness tracker application that allows users to track thei
 
 ## Screenshots
 
-![Homepage](/screenshots/homepage.png)
+![Homepage](/screenshots/home.png)
 ![Workout Details](/screenshots/workout-details.png)
 ![Exercise Details](/screenshots/exercise-details.png)
 
