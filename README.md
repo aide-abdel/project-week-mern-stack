@@ -1,4 +1,4 @@
-# Ftiness Planner
+# Fitness Planner
 
 This is a full stack fitness tracker application that allows users to track their workouts and exercises. It utilizes the Wger API for exercise data and allows users to create and save workouts, as well as track their progress over time.
 
